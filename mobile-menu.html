@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <title>Mobile Menu</title>
+</head>
+<body>
+    <button id="openMenuBtn">Open Menu</button>
+    <div class="mobile-menu" id="mobileMenu">
+        <button id="closeMenuBtn">Close Menu</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openMenuBtn = document.getElementById('openMenuBtn');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+        
+            openMenuBtn.addEventListener('click', function () {
+                mobileMenu.style.left = '0';
+            });
+        
+            closeMenuBtn.addEventListener('click', function () {
+                mobileMenu.style.left = '-250px';
+            });
+        });
+    </script>
+</body>
+</html>

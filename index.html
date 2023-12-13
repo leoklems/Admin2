@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+</head>
+<body>
+    <main class="main_container">
+        <section class="side_nav_section">
+            <div class="side_nav_logo_container p1">
+                <img src="assets/images/logo.png" alt="" class="side_nav_logo">
+            </div>
+            <nav class="side_nav_items">
+                <a href="" class="nav_item_link p1">
+                    <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                </a>
+                <a href="items.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Items</span>
+                </a>
+                <a href="staff.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>staff</span>
+                </a>
+                <a href="position.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Position</span>
+                </a>
+                <a href="reciept.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Reciept</span>
+                </a>
+                <a href="profile2.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>profile2</span>
+                </a>
+                <a href="logout-request.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Logout Request</span>
+                </a>
+                <a href="form-val.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>form2</span>
+                </a>
+                <a href="update-form.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Update Form</span>
+                </a>
+                <a href="delete-form.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Delete Form</span>
+                </a>
+                <a href="registration2.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Registration2</span>
+                </a>
+                <a href="login.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Login</span>
+                </a>
+                <a href="mobile-menu.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>Mobile</span>
+                </a>
+                <a href="cart2.html" class="nav_item_link p1">
+                    <i class="fas fa-gear"></i> <span>cart</span>
+                </a>
+                <a href="orders.html" class="nav_item_link p1">
+                    <i class="fas fa-tasks"></i> <span>Order</span>
+                </a>
+            </nav>
+        </section>
+        <section class="main_other_section_container">
+            <header class="main_header_container p1">
+                <article class="header_info_container">
+                    <div class="nav_btn_container">
+                        <a href="" class="nav_btn"></a>
+                    </div>
+                    <div class="notification_container">
+                        <i class="far fa-comment"></i>
+                        <div class="notification-badge" id="notificationBadge"></div>
+                    </div>
+                    <a href="" class="user_info_container">
+                        <span class="user_info_name">Name</span>
+                        <img src="assets/images/dummy.png" alt="" class="user_info_img">
+                    </a>
+                </article>
+            </header>
+            <section class="main_dashboard_container m1_m">
+                <article class="main_kpis_container">
+                    <div class="kpi_container p1">
+                        <div class="kpi_icon_container">
+                            <i class="fas fa-layer-group t_c"></i>
+                        </div>
+                        <div class="kpi_data_container">
+                            <strong class="kpi_data_name">
+                                Total Order Bar | Eatery
+                            </strong>
+                            <span class="kpi_data_value">
+                                7 | 3
+                            </span>
+                        </div>
+                    </div>
+                    <div class="kpi_container p1">
+                        <div class="kpi_icon_container">
+                            <i class="fas fa-dollar-sign t_c"></i>
+                        </div>
+                        <div class="kpi_data_container">
+                            <strong class="kpi_data_name">
+                                Total Bar Sales
+                            </strong>
+                            <span class="kpi_data_value">
+                                $ 300
+                            </span>
+                        </div>
+                    </div>
+                    <div class="kpi_container p1">
+                        <div class="kpi_icon_container">
+                            <i class="fas fa-euro-sign t_c"></i>
+                        </div>
+                        <div class="kpi_data_container">
+                            <strong class="kpi_data_name">
+                                Total Eatery Sales
+                            </strong>
+                            <span class="kpi_data_value">
+                                $ 300
+                            </span>
+                        </div>
+                    </div>
+                    <div class="kpi_container p1">
+                        <div class="kpi_icon_container">
+                            <i class="fas fa-user-check t_c"></i>
+                        </div>
+                        <div class="kpi_data_container">
+                            <strong class="kpi_data_name">
+                                Active Staff | Workers
+                            </strong>
+                            <span class="kpi_data_value">
+                                2 | 4
+                            </span>
+                        </div>
+                    </div>
+                </article>
+                <article class="main_charts_container">
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <div class="main_chart m1_m">
+                        <header>Bar Order Volumn for This month</header>
+                        <div class="chart-container">
+                            <canvas id="bar_sales_chart"></canvas>
+                        </div>
+                    </div>
+                </article>
+                <article class="main_charts_container">
+                    <div class="main_chart m1_m">
+                        <header>Eatery Order Volumn for This month</header>
+                        <div class="chart-container">
+                            <canvas id="eatery_sales_chart"></canvas>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+        
+    </main>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
