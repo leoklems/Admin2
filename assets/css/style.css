@@ -72,7 +72,7 @@ ol {
     background-color: var(--side-nav-background);
     position: fixed;
     height: 100vh;
-    width: 150px;
+    width: 200px;
 }
 
 .side_nav_logo {
@@ -153,7 +153,7 @@ ol {
 .main_other_section_container {
     display: flex;
     flex-direction: column;
-    margin-left: 150px;
+    margin-left: 200px;
     gap: 20px;
 }
 
@@ -161,7 +161,7 @@ ol {
     background: var(--white-background);
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 2px 13px 0 rgba(0, 0, 0, 0.19);
     position: fixed;
-    width: calc(100% - 150px);
+    width: calc(100% - 200px);
     height: 40px;
 
 }
@@ -177,15 +177,29 @@ ol {
 .nav_btn_container {
     display: none;
 }
+
+.notification_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+.notification_container i {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    font-size: 1.5em;
+}
 .notification-badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 15px;
-    height: 15px;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    width: 10px;
+    height: 10px;
     background-color: red;
     border-radius: 50%;
     display: none;
+    font-size: 0.6em;
+    justify-content: center;
+    align-content: center;
 }
 
 .user_info_container {
@@ -446,3 +460,81 @@ footer {
     background-color: #343a40;
     color: #fff;
 }
+
+
+@media (max-width: 1025px) {
+    /* Tablet */
+
+}
+
+@media (max-width: 641px) {
+    /* --------- Mobile  ------------ */
+    .side_nav_section {
+        left: -200px;
+        /* width: 250px; */
+    }
+
+    .side_nav_mobile {
+        left: 0;
+    }
+
+    .main_other_section_container {
+        margin: unset;
+    }
+
+    .main_header_container {
+        background: unset;
+        box-shadow: unset;
+        padding-top: 30px;
+        width: unset;
+    }
+
+    .nav_btn_container {
+        display: unset;
+        z-index: 2;
+    }
+
+    .header_info_container {
+        display: grid;
+        grid-template-columns: 10fr 1fr 3fr;
+    }
+
+    .main_kpis_container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .kpi_container {
+        grid-template-columns: 1fr 4fr;
+        gap: 20px;
+        width: calc(50% - 5px);
+    }
+
+    .main_charts_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mm1 {
+        padding-top: 40px;
+    }
+    .main_items_container, .main_items_container_e, .main_staff_container {
+        grid-template-columns: 1fr;
+    }
+    .main_items_container_e {
+        padding-top: 20px;
+    }
+    .filter_items {
+        flex-direction: column;
+    }
+    .main_dashboard_container {
+        padding-top: 20px;
+    }
+    .main_profile_container {
+        padding-top: 20px;
+        width: unset;
+    }
+
+}
+

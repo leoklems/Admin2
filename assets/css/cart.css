@@ -141,3 +141,11 @@ a {
     display: flex;
     gap: 20px;
 }
+
+@media (max-width: 641px) {
+    /* --------- Mobile  ------------ */
+    
+    .main_cart_container {
+        grid-template-columns: 1fr;
+    }
+}

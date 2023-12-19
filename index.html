@@ -9,12 +9,12 @@
 </head>
 <body>
     <main class="main_container">
-        <section class="side_nav_section">
+        <section class="side_nav_section mm1" id="side_nav">
             <div class="side_nav_logo_container p1">
                 <img src="assets/images/logo.png" alt="" class="side_nav_logo">
             </div>
             <nav class="side_nav_items">
-                <a href="" class="nav_item_link p1">
+                <a href="index.html" class="nav_item_link p1">
                     <i class="fas fa-th-large"></i> <span>Dashboard</span>
                 </a>
                 <a href="items.html" class="nav_item_link p1">
@@ -65,7 +65,7 @@
             <header class="main_header_container p1">
                 <article class="header_info_container">
                     <div class="nav_btn_container">
-                        <a href="" class="nav_btn"></a>
+                        <a href="" id="menuBtn" class="nav_btn"><i id="n_icon" class="fas fa-bars"></i></a>
                     </div>
                     <div class="notification_container">
                         <i class="far fa-comment"></i>
@@ -139,6 +139,9 @@
                         <div class="chart-container">
                             <canvas id="bar_sales_chart"></canvas>
                         </div>
+                        <div style="width: 80%;">
+                            <canvas id="areaChart"></canvas>
+                        </div>
                     </div>
                 </article>
                 <article class="main_charts_container">
@@ -154,5 +157,99 @@
         
     </main>
     <script src="assets/js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Dummy data for charts
+            var salesData = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [50, 60, 45, 80, 75, 90],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                }]
+            };
+
+            // Sales Chart
+            var salesCtx = document.getElementById('bar_sales_chart').getContext('2d');
+            var salesChart = new Chart(salesCtx, {
+                type: 'line',
+                data: salesData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            var eSalesCtx = document.getElementById('eatery_sales_chart').getContext('2d');
+            var eSalesChart = new Chart(eSalesCtx, {
+                type: 'line',
+                data: salesData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+                        
+            var data = {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Monthly Sales',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Set background color for the area
+                    borderWidth: 2,
+                    borderJoinStyle: 'round', // Set the border join style to 'round' for rounded edges
+                    pointRadius: 0, // Set pointRadius to 0 to remove markers from data points
+                    fill: 'start', // Set fill to 'start' for an area plot
+                    data: [randomNumber(), randomNumber(), randomNumber(), randomNumber(), randomNumber()]
+                }]
+            };
+
+            var options = {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                legend: {
+                    display: false // Set display to false to remove the legend
+                }
+            };
+
+            // Create the area chart
+            var ctx = document.getElementById('areaChart').getContext('2d');
+            var areaChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+
+                        
+            // Function to generate a random number
+            function randomNumber() {
+                return Math.floor(Math.random() * 100);
+            }
+        });
+
+    </script>
 </body>
 </html>

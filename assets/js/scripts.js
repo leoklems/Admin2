@@ -1,3 +1,21 @@
+const menuBtn = document.getElementById('menuBtn');
+const bars = document.querySelectorAll('fa-bars');
+var sideNav = document.querySelectorAll('.side_nav_section');
+document.getElementById('menuBtn').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('side_nav').classList.toggle("side_nav_mobile");
+    var bars = document.getElementById('n_icon');
+
+    if (bars.classList.contains('fa-bars')) {
+        bars.classList.replace('fa-bars', 'fa-times');
+        bars.style.color = 'white';
+    }else {
+        bars.classList.replace('fa-times', 'fa-bars');
+        bars.style.color = 'black';
+    }
+    
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     // Dummy data for charts
     var salesData = {
@@ -19,52 +37,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }]
     };
 
-    // Sales Chart
-    var salesCtx = document.getElementById('bar_sales_chart').getContext('2d');
-    var salesChart = new Chart(salesCtx, {
-        type: 'line',
-        data: salesData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    beginAtZero: true
-                },
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    var eSalesCtx = document.getElementById('eatery_sales_chart').getContext('2d');
-    var eSalesChart = new Chart(eSalesCtx, {
-        type: 'line',
-        data: salesData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    beginAtZero: true
-                },
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
+    
     // Product Distribution Chart
-    var productDistributionCtx = document.getElementById('bar_items_char_t').getContext('2d');
-    var productDistributionChart = new Chart(productDistributionCtx, {
-        type: 'bar',
-        data: productDistributionData,
-        options: {
-            responsive: false,
-            maintainAspectRatio: false,
-        }
-    });
+    // var productDistributionCtx = document.getElementById('bar_items_char_t').getContext('2d');
+    // var productDistributionChart = new Chart(productDistributionCtx, {
+    //     type: 'bar',
+    //     data: productDistributionData,
+    //     options: {
+    //         responsive: false,
+    //         maintainAspectRatio: false,
+    //     }
+    // });
 
     
     // notification
@@ -79,7 +62,7 @@ function showNotification() {
 
 function updateBadge() {
     if (notificationCount > 0) {
-        notificationBadge.style.display = 'block';
+        notificationBadge.style.display = 'grid';
         notificationBadge.innerText = notificationCount > 9 ? '9+' : notificationCount.toString();
     } else {
         notificationBadge.style.display = 'none';
@@ -91,5 +74,7 @@ function updateBadge() {
 setTimeout(() => {
     showNotification();
 }, 3000);
+
+
 
 });
